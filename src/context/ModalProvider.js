@@ -27,7 +27,7 @@ export default function ModalProvider({ children }) {
 
     return (
         <ModalContext.Provider value={{ showModal, hideModal }}>
-            <div onClick={hideModal}>
+            <div onClick={hideModal} style={{ height: '100%' }}>
                 {
                     modalData && <ImageModal url={modalData.url} animationState={modalAnimationState} animationDuration={1500} />
                 }
