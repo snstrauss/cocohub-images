@@ -3,6 +3,7 @@ import ImageModal from '../components/ImageModal/ImageModal';
 
 export const ModalContext = createContext();
 
+const ANIMATION_DURATION = 1500;
 export default function ModalProvider({ children }) {
 
     const [modalData, setModalData] = useState();
@@ -10,7 +11,6 @@ export default function ModalProvider({ children }) {
     const [modalAnimationState, setModalAnimationState] = useState();
 
     function showModal(url) {
-
         setModalData({
             url
         });
@@ -22,15 +22,14 @@ export default function ModalProvider({ children }) {
         setModalAnimationState('leave');
         setTimeout(() => {
             setModalData();
-            setModalAnimationState();
-        }, 3000);
+        }, ANIMATION_DURATION + 100);
     }
 
     return (
         <ModalContext.Provider value={{ showModal, hideModal }}>
-            <div style={{ border: '5px solid red' }} onClick={hideModal}>
+            <div onClick={hideModal}>
                 {
-                    modalData && <ImageModal url={modalData.url} animationState={modalAnimationState} />
+                    modalData && <ImageModal url={modalData.url} animationState={modalAnimationState} animationDuration={1500} />
                 }
                 {children}
             </div>

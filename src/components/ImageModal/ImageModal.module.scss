@@ -2,7 +2,6 @@
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 1vw;
 
-  --animation-duration: 1.5s;
   --size: 95%;
   width: var(--size);
   height: var(--size);
@@ -26,9 +25,14 @@
     width: 85vw;
     height: 75vh;
 
-    & > img:hover {
+    &:hover {
       transform: unset;
-      cursor: unset;
+
+      border-radius: 0;
+
+      & > img {
+        cursor: unset;
+      }
     }
   }
 }
