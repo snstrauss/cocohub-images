@@ -16,8 +16,6 @@
     box-sizing: border-box;
     display: block;
     position: absolute;
-    // width: 64px;
-    // height: 64px;
     --circ-size: calc(0.8 * var(--multi-size));
     --border-size: calc(0.1 * var(--multi-size));
     width: var(--circ-size);
