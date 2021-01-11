@@ -22,7 +22,7 @@ export default function ModalProvider({ children }) {
         setModalAnimationState('leave');
         setTimeout(() => {
             setModalData();
-        }, ANIMATION_DURATION + 100);
+        }, ANIMATION_DURATION);
     }
 
     return (
