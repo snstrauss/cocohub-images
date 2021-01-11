@@ -1,0 +1,22 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.5);
+
+  margin: 5%;
+  --size: 10vw;
+  width: var(--size);
+  height: var(--size);
+
+  position: relative;
+  img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

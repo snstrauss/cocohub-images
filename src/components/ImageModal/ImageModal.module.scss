@@ -1,0 +1,52 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 1vw;
+
+  --animation-duration: 1.5s;
+  --size: 95%;
+  width: var(--size);
+  height: var(--size);
+
+  z-index: 2;
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &.enter {
+    animation: fade-in var(--animation-duration) ease-in;
+  }
+
+  &.leave {
+    animation: fade-out var(--animation-duration) ease-out;
+  }
+
+  & > div {
+    width: 85vw;
+    height: 75vh;
+
+    & > img:hover {
+      transform: unset;
+      cursor: unset;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

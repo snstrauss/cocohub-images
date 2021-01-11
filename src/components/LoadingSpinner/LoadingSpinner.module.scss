@@ -1,0 +1,52 @@
+.spinner {
+  --multi-size: calc(var(--size, 1) * 80px);
+  --spin-color: var(--color, dodgerblue);
+
+  display: inline-block;
+  position: relative;
+  width: var(--multi-size);
+  height: var(--multi-size);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    // width: 64px;
+    // height: 64px;
+    --circ-size: calc(0.8 * var(--multi-size));
+    --border-size: calc(0.1 * var(--multi-size));
+    width: var(--circ-size);
+    height: var(--circ-size);
+    margin: var(--border-size);
+    border: var(--border-size) solid var(--spin-color);
+    border-radius: 50%;
+    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--spin-color) transparent transparent transparent;
+
+    &:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
