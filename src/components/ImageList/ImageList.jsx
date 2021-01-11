@@ -1,15 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import S from "./ImageList.module.scss";
 import Image from "../Image/Image";
-import ImageModal from "../ImageModal/ImageModal";
 import { ModalContext } from "../../context/ModalProvider";
 
 export default function ImageList({ images }) {
   const { showModal } = useContext(ModalContext);
-
-  function showImage(url) {
-    showModal(url);
-  }
 
   return (
     <div className={S.container}>
@@ -18,7 +13,7 @@ export default function ImageList({ images }) {
           key={id}
           url={download_url}
           author={author}
-          onClick={showImage}
+          onClick={showModal}
         />
       ))}
     </div>
